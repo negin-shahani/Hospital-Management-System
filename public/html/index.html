@@ -1,7 +1,3 @@
-<!-- <x-app-layout>
-    <h1>This is user dashboard</h1>
-</x-app-layout> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
