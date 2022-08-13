@@ -82,12 +82,22 @@
             <li class="nav-item">
               <a class="nav-link" href="contact.html">Contact</a>
             </li>
+
+            @if(Route::has('login'))
+            @auth
+            <x-app-layout>
+                <!-- this will show the profile and logout button -->
+            </x-app-layout>
+            @else
+
             <li class="nav-item">
               <a class="btn btn-primary ml-lg-3" href="{{ route('login') }}">Login</a>
             </li>
             <li class="nav-item">
               <a class="btn btn-primary ml-lg-3" href="{{ route('register') }}">Register</a>
             </li>
+            @endauth
+            @endif
           </ul>
         </div> <!-- .navbar-collapse -->
       </div> <!-- .container -->
