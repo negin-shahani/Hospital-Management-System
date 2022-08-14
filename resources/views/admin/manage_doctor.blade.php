@@ -55,7 +55,7 @@
         @include('admin.navbar')
         <div class="container-fluid page-body-wrapper">
             <div class="container" align="center" style="padding: 100px;" >
-                <form action="">
+                <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data" >
                     <div style="padding: 10px;">
                         <label for="name">Doctor name:</label>
                         <input type="text" name="name" placeholder="write the doctor name!" >
