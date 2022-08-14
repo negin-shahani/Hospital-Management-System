@@ -65,15 +65,15 @@
                 <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data" >
                     <div style="padding: 10px;">
                         <label for="name">Doctor name:</label>
-                        <input type="text" name="name" placeholder="write the doctor name!" >
+                        <input type="text" name="name" placeholder="write the doctor name!" required>
                     </div>
                     <div style="padding: 10px;">
                         <label for="phone">Phone Number:</label>
-                        <input type="number" name="phone" placeholder="ex: 0902***4164" >
+                        <input type="number" name="phone" placeholder="ex: 0902***4164" required>
                     </div>
                     <div style="padding: 10px;">
                         <label for="Speciality">Doctor Speciality:</label>
-                        <select name="Speciality" style="color: black; width:inherit; width: 250px;" id="">
+                        <select name="Speciality" style="color: black; width:inherit; width: 250px;" required>
                             <option value="-- select --">-- select --</option>
                             <option value="Dermatologists">Dermatologists</option>
                             <option value="Internal medicine">Internal medicine</option>
@@ -84,14 +84,14 @@
                     </div>
                     <div style="padding: 10px;">
                         <label for="Room">Room Number:</label>
-                        <input type="text" name="Room" placeholder="ex: 104" >
+                        <input type="text" name="Room" placeholder="ex: 104" required>
                     </div>
                     <div style="padding: 10px;">
                         <label for="Image">Doctor Image:</label>
-                        <input type="file" name="Image">
+                        <input type="file" name="Image" required>
                     </div>
                     <div style="padding: 10px;">
-                        <input type="submit" class="btn btn-success" >
+                        <input type="submit" class="btn btn-success">
                     </div>
                 </form>
             </div>
