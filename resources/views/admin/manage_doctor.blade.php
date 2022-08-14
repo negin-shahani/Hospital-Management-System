@@ -55,6 +55,13 @@
         @include('admin.navbar')
         <div class="container-fluid page-body-wrapper">
             <div class="container" align="center" style="padding: 100px;" >
+                @if(session()->has('message'))
+                    <div class="alert alert-success" >
+                        <button type="button" class="close" data-bs-dismiss="alert" >X</button>
+                        {{session()->get('message')}}
+                    </div>
+                @endif
+
                 <form action="{{url('upload_doctor')}}" method="POST" enctype="multipart/form-data" >
                     <div style="padding: 10px;">
                         <label for="name">Doctor name:</label>

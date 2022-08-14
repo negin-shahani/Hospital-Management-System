@@ -31,6 +31,6 @@ class AdminController extends Controller
         $doctor->image = $imagename;
 
         $doctor->save();
-        return redirect()->back();
+        return redirect()->back()->with('message', 'Doctor Added Successfully!');
     }
 }
