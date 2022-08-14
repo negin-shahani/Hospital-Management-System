@@ -34,3 +34,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('/manage_doctor_view', [AdminController::class, 'addview']);
