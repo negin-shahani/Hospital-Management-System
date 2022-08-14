@@ -21,6 +21,29 @@
     <link rel="stylesheet" href="admin/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
+    <style>
+        input[type=text]{
+            color: black;
+            width: 250px;
+        }
+        input[type=number]{
+            color: black;
+            width: 250px;
+        }
+        input[type=file]{
+            color: white;
+            width: 250px;
+        }
+        input[type=submit]{
+            color: white;
+            width: 100px;
+        }
+        label{
+            width: 130px;
+            text-align: left;
+            
+        }
+    </style>
   </head>
   <body>
     <div class="container-scroller">
@@ -30,6 +53,42 @@
       <div class="container-fluid page-body-wrapper">
         <!-- partial:partials/_navbar.html -->
         @include('admin.navbar')
+        <div class="container-fluid page-body-wrapper">
+            <div class="container" align="center" style="padding: 100px;" >
+                <form action="">
+                    <div style="padding: 10px;">
+                        <label for="name">Doctor name:</label>
+                        <input type="text" name="name" placeholder="write the doctor name!" >
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="phone">Phone Number:</label>
+                        <input type="number" name="phone" placeholder="ex: 0902***4164" >
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="Speciality">Doctor Speciality:</label>
+                        <select name="Speciality" style="color: black; width:inherit; width: 250px;" id="">
+                            <option value="">-- select --</option>
+                            <option value="">Dermatologists</option>
+                            <option value="">Internal medicine</option>
+                            <option value="">Neurology</option>
+                            <option value="">Plastic Surgeon</option>
+                            <option value="">General Surgeon</option>
+                        </select>
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="Room">Room Number:</label>
+                        <input type="text" name="Room" placeholder="ex: 104" >
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="Image">Doctor Image:</label>
+                        <input type="file" name="Image">
+                    </div>
+                    <div style="padding: 10px;">
+                        <input type="submit" class="btn btn-success" >
+                    </div>
+                </form>
+            </div>
+        </div>
         <!-- main-panel ends -->
       </div>
       <!-- page-body-wrapper ends -->
