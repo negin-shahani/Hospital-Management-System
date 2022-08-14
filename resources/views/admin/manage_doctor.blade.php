@@ -67,12 +67,12 @@
                     <div style="padding: 10px;">
                         <label for="Speciality">Doctor Speciality:</label>
                         <select name="Speciality" style="color: black; width:inherit; width: 250px;" id="">
-                            <option value="">-- select --</option>
-                            <option value="">Dermatologists</option>
-                            <option value="">Internal medicine</option>
-                            <option value="">Neurology</option>
-                            <option value="">Plastic Surgeon</option>
-                            <option value="">General Surgeon</option>
+                            <option value="-- select --">-- select --</option>
+                            <option value="Dermatologists">Dermatologists</option>
+                            <option value="Internal medicine">Internal medicine</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Plastic Surgeon">Plastic Surgeon</option>
+                            <option value="General Surgeon">General Surgeon</option>
                         </select>
                     </div>
                     <div style="padding: 10px;">
