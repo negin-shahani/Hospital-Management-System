@@ -19,6 +19,9 @@
   <link rel="stylesheet" href="../assets/vendor/animate/animate.css">
 
   <link rel="stylesheet" href="../assets/css/theme.css">
+
+  <link rel="stylesheet" type="text/css" href="../assets/css/myappointment.css" />
+
 </head>
 <body>
 
@@ -108,6 +111,52 @@
       </div> <!-- .container -->
     </nav>
   </header>
+
+
+  <div align="center" style="padding:70px;" >
+    <table class="styled-table" cellspacing='0'>
+        <thead>
+            <tr>
+                <th>Doctor name</th>
+                <th>Date</th>
+                <th>Message</th>
+                <th>Status</th>            
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </tbody>
+    </table>
+  </div>
 
 
   <footer class="page-footer">
