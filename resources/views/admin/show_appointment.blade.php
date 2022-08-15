@@ -32,11 +32,11 @@
         <!-- partial:partials/_navbar.html -->
         @include('admin.navbar')
         <div class="container-fluid page-body-wrapper">
-            <div class="container" align="center" style="padding: 100px;" >
+            <div class="container" align="center" style="padding: 10px;" >
                 @if(session()->has('message'))
                     <div class="alert alert-success" >
-                        <button type="button" class="close" data-bs-dismiss="alert" >X</button>
                         {{session()->get('message')}}
+                        <button type="button" class="close" data-bs-dismiss="alert" style="color:red;" >X</button>
                     </div>
                 @endif
 
@@ -49,7 +49,9 @@
                             <th>Doctor</th>    
                             <th>Date</th> 
                             <th>Message</th>
-                            <th>Status</th>       
+                            <th>Status</th> 
+                            <th>Approve</th>       
+                            <th>Cancel</th>                                         
                         </tr>
                     </thead>
                     <tbody>
@@ -62,6 +64,12 @@
                                 <td>{{$appoint->date}}</td>
                                 <td>{{$appoint->message}}</td>
                                 <td>{{$appoint->status}}</td>
+                                <td><a class="btn btn-success" href="{{url('approve', $appoint->id)}}" onclick="return confirm('Are you sure you want to Approve this Appointment?')">
+                                    Approve</a>
+                                </td>
+                                <td><a class="btn btn-danger" href="{{url('cancel', $appoint->id)}}" onclick="return confirm('Are you sure you want to cancel this Appointment?')">
+                                    Cancel</a>
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
