@@ -56,6 +56,15 @@ class HomeController extends Controller
     }
 
     public function myappointment(){
-        return view('user.my_appointment');
+        if(Auth::id()){
+            // get the user id who is logged in
+            $userID = Auth::user()->id;
+            //if the user_id of appointment DB table and this userid is equal get that row
+            $appointment = Appointment::where('user_id' , $userID)->get();
+            return view('user.my_appointment', compact('appointment'));
+        }else{
+            return redirect()->back();
+        }
+        
     }
 }
