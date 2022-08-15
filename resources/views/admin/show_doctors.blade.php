@@ -40,6 +40,28 @@
                     </div>
                 @endif
 
+                <table class="styled-table" cellspacing='0'>
+                    <thead>
+                        <tr>
+                            <th>Doctor name</th>
+                            <th>phone</th>
+                            <th>Speciality</th>
+                            <th>Room</th>    
+                            <th>Image</th>                                       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($data as $doctor)
+                            <tr>
+                                <td>{{$doctor->name}}</td>
+                                <td>{{$doctor->phone}}</td>
+                                <td>{{$doctor->speciality}}</td>
+                                <td>{{$doctor->room}}</td>
+                                <td><img src="doctorimage/{{$doctor->image}}" alt="" height="50px" width="50px"></td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
                 
             </div>
         </div>
