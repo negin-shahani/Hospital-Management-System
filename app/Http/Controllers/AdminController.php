@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Doctor;
+use App\Models\Appointment;
 
 class AdminController extends Controller
 {
@@ -35,6 +36,7 @@ class AdminController extends Controller
     }
 
     public function show_appointments(){
-        return view('admin.show_appointment');
+        $data = Appointment::all();
+        return view('admin.show_appointment', Compact('data'));
     }
 }
