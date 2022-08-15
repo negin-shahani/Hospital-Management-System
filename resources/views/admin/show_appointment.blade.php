@@ -43,28 +43,27 @@
                 <table class="styled-table" cellspacing='0'>
                     <thead>
                         <tr>
-                            <th>Doctor name</th>
-                            <th>Date</th>
+                            <th>Patient name</th>
+                            <th>Email</th>
+                            <th>phone</th>
+                            <th>Doctor</th>    
+                            <th>Date</th> 
                             <th>Message</th>
-                            <th>Status</th>    
-                            <th>Cancel Appointment</th>        
+                            <th>Status</th>       
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>4</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>2</td>
-                            <td>3</td>
-                            <td>4</td>
-                            <td>4</td>
-                        </tr>
+                        @foreach($data as $appoint)
+                            <tr>
+                                <td>{{$appoint->name}}</td>
+                                <td>{{$appoint->email}}</td>
+                                <td>{{$appoint->phone}}</td>
+                                <td>{{$appoint->doctor}}</td>
+                                <td>{{$appoint->date}}</td>
+                                <td>{{$appoint->message}}</td>
+                                <td>{{$appoint->status}}</td>
+                            </tr>
+                        @endforeach
                     </tbody>
                 </table>
             </div>
