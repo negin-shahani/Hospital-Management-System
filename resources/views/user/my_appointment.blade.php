@@ -112,7 +112,13 @@
     </nav>
   </header>
 
-
+  @if(session()->has('message'))
+    <div class="alert alert-success" >
+      <button type="button" class="close" data-dismiss="alert" >X</button>
+          {{session()->get('message')}}
+    </div>
+  @endif
+  
   <div align="center" style="padding:70px;" >
     <table class="styled-table" cellspacing='0'>
         <thead>
@@ -120,7 +126,8 @@
                 <th>Doctor name</th>
                 <th>Date</th>
                 <th>Message</th>
-                <th>Status</th>            
+                <th>Status</th>    
+                <th>Cancel Appointment</th>        
             </tr>
         </thead>
         <tbody>
@@ -130,6 +137,9 @@
                 <td>{{$appoint->date}}</td>
                 <td>{{$appoint->message}}</td>
                 <td>{{$appoint->status}}</td>
+                <td><a class="btn btn-danger" href="{{url('cancel_appointment', $appoint->id)}}" onclick="return confirm('Are you sure to delete this Appointment?')">
+                    Cancel</a>
+                </td>
             </tr>
             @endforeach
         </tbody>
