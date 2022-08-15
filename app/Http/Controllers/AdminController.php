@@ -53,4 +53,8 @@ class AdminController extends Controller
         $data->save();
         return redirect()->back()->with('message', 'Appointment Canceled!');
     }
+
+    public function show_doctors(){
+        return view('admin.show_doctors');
+    }
 }
