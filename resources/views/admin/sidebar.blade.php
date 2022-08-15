@@ -91,9 +91,6 @@
           <li class="nav-item menu-items">
             <a class="nav-link" href="pages/tables/basic-table.html">
               <span class="menu-icon">
-                <i class="mdi mdi-table-large"></i>
-              </span>
-              <!-- <span class="menu-icon">
                 <i class="mdi mdi-file-document-box"></i>
               </span>
               <span class="menu-title">Tables</span>
@@ -139,6 +136,14 @@
                 <i class="mdi mdi-table-large"></i>
               </span>
               <span class="menu-title">Manage Doctors</span>
+            </a>
+          </li>
+          <li class="nav-item menu-items">
+            <a class="nav-link" href="{{url('show_appointments')}}">
+              <span class="menu-icon">
+                <i class="mdi mdi-contacts"></i>
+              </span>
+              <span class="menu-title">Appointments</span>
             </a>
           </li>
         </ul>
