@@ -124,36 +124,14 @@
             </tr>
         </thead>
         <tbody>
+            @foreach($appointment as $appoint)
             <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
+                <td>{{$appoint->doctor}}</td>
+                <td>{{$appoint->date}}</td>
+                <td>{{$appoint->message}}</td>
+                <td>{{$appoint->status}}</td>
             </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-            </tr>
-            <tr>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
-            </tr>
+            @endforeach
         </tbody>
     </table>
   </div>
