@@ -59,7 +59,7 @@
                     </div>
                 @endif
 
-                <form action="{{url('', )}}" method="POST" enctype="multipart/form-data" >
+                <form action="{{url('send',$data->id )}}" method="POST">
                     @csrf
                     <div style="padding: 10px;">
                         <label for="name">Greeting:</label>
@@ -82,7 +82,7 @@
                         <input type="text" name="endpart" value="" >
                     </div>
                     <div style="padding: 10px;">
-                        <input type="submit" class="btn btn-success" value="save changes">
+                        <input type="submit" class="btn btn-success" value="Send Message">
                     </div>
                 </form>
                 

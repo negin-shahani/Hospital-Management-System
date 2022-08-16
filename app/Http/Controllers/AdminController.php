@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Doctor;
 use App\Models\Appointment;
+use Notification;
+use App\Notifications\SendMailNotification;
 
 class AdminController extends Controller
 {
@@ -91,6 +93,22 @@ class AdminController extends Controller
     }
 
     public function sendEmail($id){
-        return view('admin.sendEmail');
+        $data = Appointment::find($id);
+        return view('admin.sendEmail', Compact('data'));
+    }
+
+    public function send(Request $request, $id){
+        $data = Appointment::find($id);
+
+        $details = [
+            'greeting'=> $request->greeting,
+            'body' => $request->body,
+            'actiontext' => $request->actiontext,
+            'actionurl' => $request->actionurl,
+            'endpart' => $request->endpart
+        ];
+
+        Notification::send($data, new sendMailNotification($details));
+        return redirect()->back()->with('message', 'Message Send!');
     }
 }
