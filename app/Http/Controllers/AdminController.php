@@ -64,4 +64,8 @@ class AdminController extends Controller
         $data->delete();
         return redirect()->back()->with('message', 'Doctor information deleted!'); 
     }
+
+    public function update_Doctor(){
+        return view('admin.update_Doctor');
+    }
 }
