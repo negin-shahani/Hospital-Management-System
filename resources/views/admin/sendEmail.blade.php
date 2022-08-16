@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/public">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -22,6 +23,24 @@
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
     <link rel="stylesheet" type="text/css" href="../assets/css/showAppointment.css" />
+    <style>
+        input[type=text]{
+            color: black;
+            width: 300px;
+            border: 3px solid #009879;
+            border-radius: 5px;
+        }
+        input[type=submit]{
+            color: white;
+            width: 200px;
+            align:center;
+        }
+        label{
+            width: 100px;
+            text-align: left;
+            color: #009879;
+        }
+    </style>
   </head>
   <body>
     <div class="container-scroller">
@@ -32,7 +51,7 @@
         <!-- partial:partials/_navbar.html -->
         @include('admin.navbar')
         <div class="container-fluid page-body-wrapper">
-            <div class="container" align="center" style="padding: 10px;" >
+            <div class="container" align="center" style="padding: 100px;" >
                 @if(session()->has('message'))
                     <div class="alert alert-success" >
                         {{session()->get('message')}}
@@ -40,44 +59,33 @@
                     </div>
                 @endif
 
-                <table class="styled-table" cellspacing='0'>
-                    <thead>
-                        <tr>
-                            <th>Patient name</th>
-                            <th>Email</th>
-                            <th>phone</th>
-                            <th>Doctor</th>    
-                            <th>Date</th> 
-                            <th>Message</th>
-                            <th>Status</th> 
-                            <th>Approve</th>       
-                            <th>Cancel</th>                                         
-                            <th>Send Mail</th>                                         
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @foreach($data as $appoint)
-                            <tr>
-                                <td>{{$appoint->name}}</td>
-                                <td>{{$appoint->email}}</td>
-                                <td>{{$appoint->phone}}</td>
-                                <td>{{$appoint->doctor}}</td>
-                                <td>{{$appoint->date}}</td>
-                                <td>{{$appoint->message}}</td>
-                                <td>{{$appoint->status}}</td>
-                                <td><a class="btn btn-success" href="{{url('approve', $appoint->id)}}" onclick="return confirm('Are you sure you want to Approve this Appointment?')">
-                                    Approve</a>
-                                </td>
-                                <td><a class="btn btn-danger" href="{{url('cancel', $appoint->id)}}" onclick="return confirm('Are you sure you want to cancel this Appointment?')">
-                                    Cancel</a>
-                                </td>
-                                <td><a class="btn btn-primary" href="{{url('sendEmail', $appoint->id)}}" onclick="return confirm('Are you sure you want to send mail?')">
-                                    Send Mail</a>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
+                <form action="{{url('', )}}" method="POST" enctype="multipart/form-data" >
+                    @csrf
+                    <div style="padding: 10px;">
+                        <label for="name">Greeting:</label>
+                        <input type="text" name="greeting" value="" >
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="phone">Body:</label>
+                        <input type="text" name="body" value="" style="width:300px; height:80px;">
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="name">Action Text:</label>
+                        <input type="text" name="actiontext" value="" >
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="name">Action URL:</label>
+                        <input type="text" name="actionurl" value="" >
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="name">End Part:</label>
+                        <input type="text" name="endpart" value="" >
+                    </div>
+                    <div style="padding: 10px;">
+                        <input type="submit" class="btn btn-success" value="save changes">
+                    </div>
+                </form>
+                
             </div>
         </div>
         <!-- main-panel ends -->

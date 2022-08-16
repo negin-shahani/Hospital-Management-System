@@ -89,4 +89,8 @@ class AdminController extends Controller
         return redirect()->back()->with('message', 'Doctor Information Updated!');
         
     }
+
+    public function sendEmail($id){
+        return view('admin.sendEmail');
+    }
 }
