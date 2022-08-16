@@ -16,3 +16,23 @@
 - On the other hand, the administrator has the responsibility of communicating, who acts as a secretary and organizes, accepts or rejects requests. and responds to patients' messages.
 
 
+## Additional options:
+- Email verification after registering to system
+- Forgot password
+- Email Notification from Admin to Patients
+
+## Explanation
+
+- Two type of users:
+   - Regular users(patients)
+   - Admi(the Secretary)
+- database name: hospital.sql
+
+
+ ## Requirements
+ - Apache
+ - PHP 
+ - MySQL
+ - Composer
+ 
+ 
