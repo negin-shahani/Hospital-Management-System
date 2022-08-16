@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <base href="/public">
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,7 +22,38 @@
     <link rel="stylesheet" href="admin/assets/css/style.css">
     <!-- End layout styles -->
     <link rel="shortcut icon" href="admin/assets/images/favicon.png" />
-    <link rel="stylesheet" type="text/css" href="../assets/css/showAppointment.css" />
+    <style>
+        input[type=text]{
+            color: black;
+            width: 250px;
+        }
+        input[type=number]{
+            color: black;
+            width: 250px;
+        }
+        input[type=file]{
+            color: white;
+            width: 250px;
+        }
+        input[type=submit]{
+            color: white;
+            width: 200px;
+            align:center;
+        }
+        label{
+            width: 130px;
+            text-align: left;
+            
+        }
+        div img{
+            display: inline-block;
+            width: 250px;
+            height: 250px;
+        }
+        .LabPic{
+            display: inline-block;
+        }
+    </style>
   </head>
   <body>
     <div class="container-scroller">
@@ -32,16 +64,50 @@
         <!-- partial:partials/_navbar.html -->
         @include('admin.navbar')
         <div class="container-fluid page-body-wrapper">
-            <div class="container" align="center" style="padding: 10px;" >
+            <div class="container" align="center" style="padding: 100px;" >
                 @if(session()->has('message'))
                     <div class="alert alert-success" >
                         {{session()->get('message')}}
                         <button type="button" class="close" data-bs-dismiss="alert" style="color:red; border:1px solid red; margin:5px; padding:2px;" >X</button>
                     </div>
                 @endif
-
-                
-                
+                <form action="" method="POST" enctype="multipart/form-data" >
+                    @csrf
+                    <div style="padding: 10px;">
+                        <label for="name">Doctor name:</label>
+                        <input type="text" name="name" value="{{$data->name}}" placeholder="write the doctor name!" required>
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="phone">Phone Number:</label>
+                        <input type="number" name="phone" value="{{$data->phone}}" placeholder="ex: 0902***4164" required>
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="Speciality">Doctor Speciality:</label>
+                        <select name="Speciality" style="color: black; width:inherit; width: 250px;" required>
+                            <option value="{{$data->speciality}}">current: {{$data->speciality}}</option>
+                            <option value="Dermatologists">Dermatologists</option>
+                            <option value="Internal medicine">Internal medicine</option>
+                            <option value="Neurology">Neurology</option>
+                            <option value="Plastic Surgeon">Plastic Surgeon</option>
+                            <option value="General Surgeon">General Surgeon</option>
+                        </select>
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="Room">Room Number:</label>
+                        <input type="text" name="Room"  value="{{$data->room}}" placeholder="ex: 104" required>
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="Image">Doctor Image:</label>
+                        <img src="doctorimage/{{$data->image}}" alt="your image" >
+                    </div>
+                    <div style="padding: 10px;">
+                        <label for="Image"></label>
+                        <input  type="file" name="Image" required>
+                    </div>
+                    <div style="padding: 10px;">
+                        <input type="submit" class="btn btn-success" value="save changes">
+                    </div>
+                </form>
             </div>
         </div>
         <!-- main-panel ends -->

@@ -63,7 +63,7 @@
                                 <td><a class="btn btn-danger" href="{{url('delete_doctor', $doctor->id)}}" onclick="return confirm('Are you sure you want to delete this Doctor information?')">
                                     Delete</a>
                                 </td>
-                                <td><a class="btn btn-success" href="{{url('update_Doctor')}}" onclick="return confirm('Are you sure you want to update this Doctor information?')">
+                                <td><a class="btn btn-success" href="{{url('update_Doctor', $doctor->id)}}" onclick="return confirm('Are you sure you want to update this Doctor information?')">
                                     Update</a>
                                 </td>
                             </tr>
