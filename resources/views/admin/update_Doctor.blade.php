@@ -71,19 +71,19 @@
                         <button type="button" class="close" data-bs-dismiss="alert" style="color:red; border:1px solid red; margin:5px; padding:2px;" >X</button>
                     </div>
                 @endif
-                <form action="" method="POST" enctype="multipart/form-data" >
+                <form action="{{url('edit_doctor', $data->id)}}" method="POST" enctype="multipart/form-data" >
                     @csrf
                     <div style="padding: 10px;">
                         <label for="name">Doctor name:</label>
-                        <input type="text" name="name" value="{{$data->name}}" placeholder="write the doctor name!" required>
+                        <input type="text" name="name" value="{{$data->name}}" placeholder="write the doctor name!" >
                     </div>
                     <div style="padding: 10px;">
                         <label for="phone">Phone Number:</label>
-                        <input type="number" name="phone" value="{{$data->phone}}" placeholder="ex: 0902***4164" required>
+                        <input type="number" name="phone" value="{{$data->phone}}" placeholder="ex: 0902***4164" >
                     </div>
                     <div style="padding: 10px;">
                         <label for="Speciality">Doctor Speciality:</label>
-                        <select name="Speciality" style="color: black; width:inherit; width: 250px;" required>
+                        <select name="Speciality" style="color: black; width:inherit; width: 250px;" >
                             <option value="{{$data->speciality}}">current: {{$data->speciality}}</option>
                             <option value="Dermatologists">Dermatologists</option>
                             <option value="Internal medicine">Internal medicine</option>
@@ -94,7 +94,7 @@
                     </div>
                     <div style="padding: 10px;">
                         <label for="Room">Room Number:</label>
-                        <input type="text" name="Room"  value="{{$data->room}}" placeholder="ex: 104" required>
+                        <input type="text" name="Room"  value="{{$data->room}}" placeholder="ex: 104" >
                     </div>
                     <div style="padding: 10px;">
                         <label for="Image">Doctor Image:</label>
@@ -102,7 +102,7 @@
                     </div>
                     <div style="padding: 10px;">
                         <label for="Image"></label>
-                        <input  type="file" name="Image" required>
+                        <input  type="file" name="Image" >
                     </div>
                     <div style="padding: 10px;">
                         <input type="submit" class="btn btn-success" value="save changes">
